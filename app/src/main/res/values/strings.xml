@@ -7,4 +7,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="directions_key" translatable="false">AIzaSyBuqHy2U7eK9zTHIN64SbR7qD4l0iZQ6-k</string>
 </resources>
