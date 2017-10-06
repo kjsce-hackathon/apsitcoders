@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/book_ticket"
+        android:title="Book Ticket" />
+
+    <item
+        android:id="@+id/wallet"
+        android:title="Wallet" />
+
+    <item android:id="@+id/my_tickets"
+        android:title="My Tickets" />
+
+    <item android:id="@+id/real_time_status"
+        android:title="Real Time Status" />
+
+</menu>
