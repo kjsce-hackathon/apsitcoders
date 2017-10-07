@@ -34,6 +34,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
@@ -174,7 +175,14 @@ public class NavigationFragment extends Fragment implements OnMapReadyCallback, 
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(mMap.getMyLocation().getLatitude(), mMap.getMyLocation().getLongitude())));
+        CameraPosition cameraPosition = new CameraPosition.Builder()
+                .target(new LatLng(19.267703, 72.966316))      // Sets the center of the map to Mountain View
+                .zoom(10)                   // Sets the zoom
+                .build();
+
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(19.267703, 72.966316)));
+//        mMap.animateCamera(CameraUpdateFactory.zoomIn());
         mMap.setOnPolylineClickListener(this);
         if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -245,10 +253,14 @@ public class NavigationFragment extends Fragment implements OnMapReadyCallback, 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
             if (resultCode == RESULT_OK) {
-                if(requestCode == PLACE_AUTOCOMPLETE_SOURCE_REQUEST_CODE)
+                if(requestCode == PLACE_AUTOCOMPLETE_SOURCE_REQUEST_CODE) {
                     src = PlaceAutocomplete.getPlace(getActivity(), data);
-                else if(requestCode == PLACE_AUTOCOMPLETE_DESTINATION_REQUEST_CODE)
+                    source.setText(src.getAddress().toString().split(",")[0]);
+                }
+                else if(requestCode == PLACE_AUTOCOMPLETE_DESTINATION_REQUEST_CODE) {
                     dest = PlaceAutocomplete.getPlace(getActivity(), data);
+                    destination.setText(dest.getAddress().toString().split(",")[0]);
+                }
             } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
 //                Status status = PlaceAutocomplete.getStatus(this, data);
 //                // TODO: Handle the error.
@@ -270,10 +282,6 @@ public class NavigationFragment extends Fragment implements OnMapReadyCallback, 
         previousPolyline = polyline;
         getBusStops(rectangles.get(previousPolyline.getId()));
 //        presenter.getTolls(rectangles.get(previousPolyline.getId()));
-    }
-
-    private void calculateTicket() {
-
     }
 
     private void getBusStops(MinMaxLatLong minMaxLatLong) {
