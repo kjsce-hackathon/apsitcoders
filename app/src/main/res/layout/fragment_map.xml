@@ -73,6 +73,7 @@
             android:visibility="gone"
             android:layout_marginLeft="30px"
             android:layout_marginRight="30px"
+            android:layout_marginBottom="30px"
             android:textColor="#ffffff"
             android:textSize="16dp"
             android:background="@drawable/home_button"

@@ -25,16 +25,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="₹"
-                android:textSize="68sp"
+                android:textSize="50sp"
                 android:paddingRight="10dp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/current_amount_txv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0.0"
+                android:text="0"
                 android:textStyle="bold"
-                android:textSize="70sp"
+                android:textSize="50sp"
                 />
 
 
@@ -43,14 +43,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Current Balance"
-            android:textSize="30sp"
+            android:textSize="26sp"
+            android:textStyle="bold"
             android:layout_gravity="center_horizontal"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:paddingTop="10dp"
             android:background="@color/tintColor"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="#aaa"
             />
 
@@ -66,10 +67,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:numeric="decimal"
+            android:backgroundTint="#3498DB"
             android:id="@+id/add_money_value_ed"/>
         <Button
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:text="Debit card"
             android:id="@+id/debit_card_btn"
             android:layout_marginTop="20dp"
@@ -78,7 +80,7 @@
             />
         <Button
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:text="Credit card"
             android:id="@+id/credit_card_btn"
             android:layout_marginTop="10dp"
@@ -87,7 +89,7 @@
             />
         <Button
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:text="net banking"
             android:id="@+id/net_banking_btn"
             android:layout_marginTop="10dp"
@@ -96,7 +98,7 @@
             />
         <Button
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:text="paytm"
             android:id="@+id/paytm_btn"
             android:layout_marginTop="10dp"
