@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="top"
+        android:layout_marginTop="100px">
+
+
+
+        <Button
+            android:id="@+id/source"
+            android:text="Source"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:background="@drawable/home_button"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <Button
+            android:id="@+id/destination"
+            android:text="Destination"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:background="@drawable/home_button"
+            style="?android:attr/borderlessButtonStyle" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:orientation="vertical" >
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_menu_send"
+            app:fabSize="normal"
+
+            android:layout_gravity="right"
+            android:layout_margin="16dp"/>
+
+        <Button
+            android:id="@+id/book_ticket"
+            android:text="book_ticket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            android:layout_marginBottom="30px"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:background="@drawable/home_button"
+            style="?android:attr/borderlessButtonStyle"/>
+
+
+    </LinearLayout>
+
+</FrameLayout>
