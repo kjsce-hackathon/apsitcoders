@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.apsitcoders.bus.fragment.NavigationFragment;
+import com.apsitcoders.bus.fragment.StatusFragment;
+import com.apsitcoders.bus.fragment.WalletFragment;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -84,6 +86,25 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+
+        Fragment fragment = null;
+
+        switch (id) {
+            case R.id.book_ticket:
+                fragment = new NavigationFragment();
+                break;
+            case R.id.real_time_status:
+                fragment = new StatusFragment();
+                break;
+            case R.id.wallet:
+                fragment = new WalletFragment();
+                break;
+        }
+
+        FragmentManager fragmentManager = getFragmentManager();
+        if(fragment != null) {
+            fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

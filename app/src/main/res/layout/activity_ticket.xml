@@ -5,6 +5,14 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <TextView
+        android:text="Kindly show this QR code to the bus conductor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_margin="16dp"
+        android:textAlignment="center"/>
+
     <ImageView
         android:id="@+id/qrCode"
         android:layout_width="200dp"
@@ -14,6 +22,8 @@
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAlignment="center"
+        android:layout_margin="16dp" />
 
 </LinearLayout>

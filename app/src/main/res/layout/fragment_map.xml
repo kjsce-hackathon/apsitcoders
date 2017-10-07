@@ -15,20 +15,37 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="top">
+        android:orientation="horizontal"
+        android:layout_gravity="top"
+        android:layout_marginTop="100px">
+
+
 
         <Button
             android:id="@+id/source"
             android:text="Source"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:background="@drawable/home_button"
+            style="?android:attr/borderlessButtonStyle"/>
 
         <Button
             android:id="@+id/destination"
             android:text="Destination"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:background="@drawable/home_button"
+            style="?android:attr/borderlessButtonStyle"/>
 
     </LinearLayout>
 
@@ -44,6 +61,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_menu_send"
             app:fabSize="normal"
+
             android:layout_gravity="right"
             android:layout_margin="16dp"/>
 
@@ -52,7 +70,13 @@
             android:text="book_ticket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:background="@drawable/home_button"
+            style="?android:attr/borderlessButtonStyle"/>
 
 
     </LinearLayout>

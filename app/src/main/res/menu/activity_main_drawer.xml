@@ -11,9 +11,6 @@
         android:id="@+id/wallet"
         android:title="Wallet" />
 
-    <item android:id="@+id/my_tickets"
-        android:title="My Tickets" />
-
     <item android:id="@+id/real_time_status"
         android:title="Real Time Status" />
 

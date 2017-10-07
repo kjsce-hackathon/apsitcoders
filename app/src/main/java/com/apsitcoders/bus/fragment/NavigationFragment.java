@@ -174,10 +174,7 @@ public class NavigationFragment extends Fragment implements OnMapReadyCallback, 
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(mMap.getMyLocation().getLatitude(), mMap.getMyLocation().getLongitude())));
         mMap.setOnPolylineClickListener(this);
         if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -216,6 +213,7 @@ public class NavigationFragment extends Fragment implements OnMapReadyCallback, 
         switch (view.getId()) {
             case R.id.source:
                 launchPlaceSelectActivity(PLACE_AUTOCOMPLETE_SOURCE_REQUEST_CODE);
+//                startActivity(new Intent(getActivity(), BusStopPickerActivity.class));
                 break;
             case R.id.destination:
                 launchPlaceSelectActivity(PLACE_AUTOCOMPLETE_DESTINATION_REQUEST_CODE);
